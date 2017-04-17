@@ -1,0 +1,608 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/bauhausjs/html2pdf">phantomjs-pdf (v0.1.2)</a>
+</h1>
+<h4>Simple and lightweight HTML to PDF conversion using Node and PhantomJS</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf">module phantomjs-pdf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.convert">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.</span>pdfResult
+            <span class="apidocSignatureSpan">(err, tmpPath, deleteOnAction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phantomjs-pdf.</span>pdfResult.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf.convert">module phantomjs-pdf.convert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.convert.convert">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf.pdfResult">module phantomjs-pdf.pdfResult</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.pdfResult">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.</span>pdfResult
+            <span class="apidocSignatureSpan">(err, tmpPath, deleteOnAction)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf.pdfResult.prototype">module phantomjs-pdf.pdfResult.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.deleteTmpFile">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>deleteTmpFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.getTmpPath">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>getTmpPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toBuffer">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toBuffer
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toFile">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toFile
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toStream">
+            function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phantomjs-pdf" id="apidoc.module.phantomjs-pdf">module phantomjs-pdf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.convert" id="apidoc.element.phantomjs-pdf.convert">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function convert(options, callback) {
+	var options = options || {},
+    html = options.html || '&lt;p&gt;No HTML source specified!&lt;/p&gt;',
+    css = options.css || '',
+    js = options.js || '',
+    runnings = options.runnings || '',
+    deleteOnAction = options.deleteOnAction || false;
+
+    /* Create temporary files for PDF, HTML, CSS and JS storage
+     * We need to wait for all of them to finish creating the files before proceeding.
+     */
+    async.series([
+	    function(callback) {
+	    	createTempFile(".html", html, callback);
+	    },
+	    /* PDF file is necessary for further access within Node */
+	    function(callback) {
+	    	createTempFile(".pdf", "", callback);
+	    },
+	    /* Create optional CSS injection file */
+	    function(callback) {
+	    	(css) ? createTempFile(".css", css, callback) : callback(null, null);
+	    },
+	    /* Create optional JS injection file */
+	    function(callback) {
+	    	(js) ? createTempFile(".js", js, callback) : callback(null, null);
+	    },
+	    /* Create runnings (JSON header, footer) file */
+	    function(callback) {
+	    	(runnings) ? createTempFile(".runnings", runnings, callback) : callback(null, "nofile");
+	    },
+	],
+	/* err/results-Structure
+	 * [0] = HTML temp file
+	 * [1] = PDF temp file
+	 * [2] = CSS temp file
+	 * [3] = JS temp file
+	 * [4] = Runnings temp file
+	 */
+	function(err, results) {
+	    var paperFormat = "A4";
+		var paperOrientation = "portrait";
+		var paperBorder = "1cm";
+		var renderDelay = 500;
+
+		/* All necessary files have been created.
+	     * Construct arguments and create a new phantom process.
+	     */
+	    var childArgs = [
+			path.join(__dirname, "phantom-script.js"),
+			results[0],	
+			results[1],
+			results[2],
+			results[3],
+			results[4],
+			paperFormat,
+			paperOrientation,
+			paperBorder,
+			renderDelay
+		];
+
+		childProcess.execFile(phantom.path, childArgs, function(err, stdout, stderr) {
+			var opPointer = new PDFResult(err, results[1]);
+
+			if (typeof callback === "function") {
+				callback(opPointer);
+			}
+		});
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Conversion API
+
+The API exposes a single function 'convert'. Using this function, you can input a multitude of settings, which are further
+ specified below:
+
+```` javascript
+var pdf = require('phantomjs-pdf');
+
+pdf.<span class="apidocCodeKeywordSpan">convert</span>(options, function(result) {
+	
+	/* Using a buffer and callback */
+	result.toBuffer(function(returnedBuffer) {});
+
+	/* Using a readable stream */
+	var stream = result.toStream();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult" id="apidoc.element.phantomjs-pdf.pdfResult">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.</span>pdfResult
+        <span class="apidocSignatureSpan">(err, tmpPath, deleteOnAction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PDFResult(err, tmpPath, deleteOnAction) {
+    this._err = err;
+    this._tmpPath = tmpPath;
+    this._deleteOnAction = deleteOnAction;
+    this._invalid = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phantomjs-pdf.convert" id="apidoc.module.phantomjs-pdf.convert">module phantomjs-pdf.convert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.convert.convert" id="apidoc.element.phantomjs-pdf.convert.convert">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function convert(options, callback) {
+	var options = options || {},
+    html = options.html || '&lt;p&gt;No HTML source specified!&lt;/p&gt;',
+    css = options.css || '',
+    js = options.js || '',
+    runnings = options.runnings || '',
+    deleteOnAction = options.deleteOnAction || false;
+
+    /* Create temporary files for PDF, HTML, CSS and JS storage
+     * We need to wait for all of them to finish creating the files before proceeding.
+     */
+    async.series([
+	    function(callback) {
+	    	createTempFile(".html", html, callback);
+	    },
+	    /* PDF file is necessary for further access within Node */
+	    function(callback) {
+	    	createTempFile(".pdf", "", callback);
+	    },
+	    /* Create optional CSS injection file */
+	    function(callback) {
+	    	(css) ? createTempFile(".css", css, callback) : callback(null, null);
+	    },
+	    /* Create optional JS injection file */
+	    function(callback) {
+	    	(js) ? createTempFile(".js", js, callback) : callback(null, null);
+	    },
+	    /* Create runnings (JSON header, footer) file */
+	    function(callback) {
+	    	(runnings) ? createTempFile(".runnings", runnings, callback) : callback(null, "nofile");
+	    },
+	],
+	/* err/results-Structure
+	 * [0] = HTML temp file
+	 * [1] = PDF temp file
+	 * [2] = CSS temp file
+	 * [3] = JS temp file
+	 * [4] = Runnings temp file
+	 */
+	function(err, results) {
+	    var paperFormat = "A4";
+		var paperOrientation = "portrait";
+		var paperBorder = "1cm";
+		var renderDelay = 500;
+
+		/* All necessary files have been created.
+	     * Construct arguments and create a new phantom process.
+	     */
+	    var childArgs = [
+			path.join(__dirname, "phantom-script.js"),
+			results[0],	
+			results[1],
+			results[2],
+			results[3],
+			results[4],
+			paperFormat,
+			paperOrientation,
+			paperBorder,
+			renderDelay
+		];
+
+		childProcess.execFile(phantom.path, childArgs, function(err, stdout, stderr) {
+			var opPointer = new PDFResult(err, results[1]);
+
+			if (typeof callback === "function") {
+				callback(opPointer);
+			}
+		});
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Conversion API
+
+The API exposes a single function 'convert'. Using this function, you can input a multitude of settings, which are further
+ specified below:
+
+```` javascript
+var pdf = require('phantomjs-pdf');
+
+pdf.<span class="apidocCodeKeywordSpan">convert</span>(options, function(result) {
+	
+	/* Using a buffer and callback */
+	result.toBuffer(function(returnedBuffer) {});
+
+	/* Using a readable stream */
+	var stream = result.toStream();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phantomjs-pdf.pdfResult" id="apidoc.module.phantomjs-pdf.pdfResult">module phantomjs-pdf.pdfResult</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.pdfResult" id="apidoc.element.phantomjs-pdf.pdfResult.pdfResult">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.</span>pdfResult
+        <span class="apidocSignatureSpan">(err, tmpPath, deleteOnAction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PDFResult(err, tmpPath, deleteOnAction) {
+    this._err = err;
+    this._tmpPath = tmpPath;
+    this._deleteOnAction = deleteOnAction;
+    this._invalid = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phantomjs-pdf.pdfResult.prototype" id="apidoc.module.phantomjs-pdf.pdfResult.prototype">module phantomjs-pdf.pdfResult.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.deleteTmpFile" id="apidoc.element.phantomjs-pdf.pdfResult.prototype.deleteTmpFile">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>deleteTmpFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteTmpFile = function () {
+	var resultObject = this;
+
+	fs.unlink(this._tmpPath, function (err) {
+	  if (err) throw err;
+
+	  debug('Successfully deleted "%s"', resultObject._tmpPath);
+	  resultObject._tmpPath = '';
+	  resultObject._invalid = true;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	stream.on('data', function(data) {
+		buffers.push(data);
+	});
+
+	stream.on('end', function() {
+		buffer = Buffer.concat(buffers);
+
+		if (resultObject._deleteOnAction) { resultObject.<span class="apidocCodeKeywordSpan">deleteTmpFile</span>(); }
+		if (typeof callback === "function") { callback(buffer); }
+	});
+};
+
+method.getTmpPath = function() {
+    return this._tmpPath;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.getTmpPath" id="apidoc.element.phantomjs-pdf.pdfResult.prototype.getTmpPath">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>getTmpPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTmpPath = function () {
+    return this._tmpPath;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	/* Using a buffer and callback */
+	result.toBuffer(function(returnedBuffer) {});
+
+	/* Using a readable stream */
+	var stream = result.toStream();
+
+	/* Using the temp file path */
+	var tmpPath = result.<span class="apidocCodeKeywordSpan">getTmpPath</span>();
+
+	/* Using the file writer and callback */
+	result.toFile("/path/to/file.pdf", function() {});
+});
+````
+
+## Options
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toBuffer" id="apidoc.element.phantomjs-pdf.pdfResult.prototype.toBuffer">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toBuffer
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBuffer = function (callback) {
+	if (this._invalid) throw new Error('PDFResult became invalid after deletion!');
+
+	var buffers = [];
+	var buffer;
+	var stream = fs.createReadStream(this._tmpPath);
+	var resultObject = this;
+
+	stream.on('data', function(data) {
+		buffers.push(data);
+	});
+
+	stream.on('end', function() {
+		buffer = Buffer.concat(buffers);
+
+		if (resultObject._deleteOnAction) { resultObject.deleteTmpFile(); }
+		if (typeof callback === "function") { callback(buffer); }
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```` javascript
+var pdf = require('phantomjs-pdf');
+
+pdf.convert(options, function(result) {
+	
+	/* Using a buffer and callback */
+	result.<span class="apidocCodeKeywordSpan">toBuffer</span>(function(returnedBuffer) {});
+
+	/* Using a readable stream */
+	var stream = result.toStream();
+
+	/* Using the temp file path */
+	var tmpPath = result.getTmpPath();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toFile" id="apidoc.element.phantomjs-pdf.pdfResult.prototype.toFile">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toFile
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toFile = function (path, callback) {
+	if (this._invalid) throw new Error('PDFResult became invalid after deletion!');
+
+	var outputStream = fs.createWriteStream(path);
+    var operation = fs.createReadStream(this._tmpPath).pipe(outputStream);
+    var resultObject = this;
+
+	operation.on('close', function() {
+		if (resultObject._deleteOnAction) { resultObject.deleteTmpFile(); }
+		if (typeof callback === "function") { callback(); }
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	/* Using a readable stream */
+	var stream = result.toStream();
+
+	/* Using the temp file path */
+	var tmpPath = result.getTmpPath();
+
+	/* Using the file writer and callback */
+	result.<span class="apidocCodeKeywordSpan">toFile</span>("/path/to/file.pdf", function() {});
+});
+````
+
+## Options
+
+Calling convert() requires an options object, which includes the following definitions:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phantomjs-pdf.pdfResult.prototype.toStream" id="apidoc.element.phantomjs-pdf.pdfResult.prototype.toStream">
+        function <span class="apidocSignatureSpan">phantomjs-pdf.pdfResult.prototype.</span>toStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toStream = function () {
+	if (this._invalid) throw new Error('PDFResult became invalid after deletion!');
+
+	return fs.createReadStream(this._tmpPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+pdf.convert(options, function(result) {
+	
+	/* Using a buffer and callback */
+	result.toBuffer(function(returnedBuffer) {});
+
+	/* Using a readable stream */
+	var stream = result.<span class="apidocCodeKeywordSpan">toStream</span>();
+
+	/* Using the temp file path */
+	var tmpPath = result.getTmpPath();
+
+	/* Using the file writer and callback */
+	result.toFile("/path/to/file.pdf", function() {});
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
