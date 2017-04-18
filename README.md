@@ -1,4 +1,7 @@
-# api documentation for  [phantomjs-pdf (v0.1.2)](https://github.com/bauhausjs/html2pdf)  [![npm package](https://img.shields.io/npm/v/npmdoc-phantomjs-pdf.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-phantomjs-pdf) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-phantomjs-pdf.svg)](https://travis-ci.org/npmdoc/node-npmdoc-phantomjs-pdf)
+# npmdoc-phantomjs-pdf
+
+#### api documentation for  [phantomjs-pdf (v0.1.2)](https://github.com/bauhausjs/html2pdf)  [![npm package](https://img.shields.io/npm/v/npmdoc-phantomjs-pdf.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-phantomjs-pdf) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-phantomjs-pdf.svg)](https://travis-ci.org/npmdoc/node-npmdoc-phantomjs-pdf)
+
 #### Simple and lightweight HTML to PDF conversion using Node and PhantomJS
 
 [![NPM](https://nodei.co/npm/phantomjs-pdf.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/phantomjs-pdf)
