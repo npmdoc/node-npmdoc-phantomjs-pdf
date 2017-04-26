@@ -87,19 +87,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf.convert">module phantomjs-pdf.convert</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.phantomjs-pdf.convert.convert">
-            function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
-            <span class="apidocSignatureSpan">(options, callback)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
     <li class="apidocModuleLi"><a href="#apidoc.module.phantomjs-pdf.pdfResult">module phantomjs-pdf.pdfResult</a><ol>
 
         <li>
@@ -283,109 +270,6 @@ pdf.<span class="apidocCodeKeywordSpan">convert</span>(options, function(result)
     </ul>
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.phantomjs-pdf.convert" id="apidoc.module.phantomjs-pdf.convert">module phantomjs-pdf.convert</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.phantomjs-pdf.convert.convert" id="apidoc.element.phantomjs-pdf.convert.convert">
-        function <span class="apidocSignatureSpan">phantomjs-pdf.</span>convert
-        <span class="apidocSignatureSpan">(options, callback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function convert(options, callback) {
-	var options = options || {},
-    html = options.html || &#x27;&#x3c;p&#x3e;No HTML source specified!&#x3c;/p&#x3e;&#x27;,
-    css = options.css || &#x27;&#x27;,
-    js = options.js || &#x27;&#x27;,
-    runnings = options.runnings || &#x27;&#x27;,
-    deleteOnAction = options.deleteOnAction || false;
-
-    /* Create temporary files for PDF, HTML, CSS and JS storage
-     * We need to wait for all of them to finish creating the files before proceeding.
-     */
-    async.series([
-	    function(callback) {
-	    	createTempFile(&#x22;.html&#x22;, html, callback);
-	    },
-	    /* PDF file is necessary for further access within Node */
-	    function(callback) {
-	    	createTempFile(&#x22;.pdf&#x22;, &#x22;&#x22;, callback);
-	    },
-	    /* Create optional CSS injection file */
-	    function(callback) {
-	    	(css) ? createTempFile(&#x22;.css&#x22;, css, callback) : callback(null, null);
-	    },
-	    /* Create optional JS injection file */
-	    function(callback) {
-	    	(js) ? createTempFile(&#x22;.js&#x22;, js, callback) : callback(null, null);
-	    },
-	    /* Create runnings (JSON header, footer) file */
-	    function(callback) {
-	    	(runnings) ? createTempFile(&#x22;.runnings&#x22;, runnings, callback) : callback(null, &#x22;nofile&#x22;);
-	    },
-	],
-	/* err/results-Structure
-	 * [0] = HTML temp file
-	 * [1] = PDF temp file
-	 * [2] = CSS temp file
-	 * [3] = JS temp file
-	 * [4] = Runnings temp file
-	 */
-	function(err, results) {
-	    var paperFormat = &#x22;A4&#x22;;
-		var paperOrientation = &#x22;portrait&#x22;;
-		var paperBorder = &#x22;1cm&#x22;;
-		var renderDelay = 500;
-
-		/* All necessary files have been created.
-	     * Construct arguments and create a new phantom process.
-	     */
-	    var childArgs = [
-			path.join(__dirname, &#x22;phantom-script.js&#x22;),
-			results[0],	
-			results[1],
-			results[2],
-			results[3],
-			results[4],
-			paperFormat,
-			paperOrientation,
-			paperBorder,
-			renderDelay
-		];
-
-		childProcess.execFile(phantom.path, childArgs, function(err, stdout, stderr) {
-			var opPointer = new PDFResult(err, results[1]);
-
-			if (typeof callback === &#x22;function&#x22;) {
-				callback(opPointer);
-			}
-		});
-	});
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-## Conversion API
-
-The API exposes a single function &#x27;convert&#x27;. Using this function, you can input a multitude of settings, which are further
- specified below:
-
-```` javascript
-var pdf = require(&#x27;phantomjs-pdf&#x27;);
-
-pdf.<span class="apidocCodeKeywordSpan">convert</span>(options, function(result) {
-	
-	/* Using a buffer and callback */
-	result.toBuffer(function(returnedBuffer) {});
-
-	/* Using a readable stream */
-	var stream = result.toStream();
-...</pre></li>
-    </ul>
 
 
 </div>
